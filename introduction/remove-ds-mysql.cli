@@ -1,0 +1,5 @@
+/subsystem=datasources/data-source=WFTravelDS:remove()
+
+/subsystem=datasources/jdbc-driver=mysql:remove()
+
+module remove --name=com.mysql

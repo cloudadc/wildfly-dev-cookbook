@@ -1,0 +1,9 @@
+/server-group=server-group-SOAP:add(profile=full,socket-binding-group=full-sockets)
+/server-group=server-group-SOAP/jvm==default:add()
+
+/host=master/server-config=server-one:write-attribute(name=auto-start,value=false)
+/host=master/server-config=server-two:write-attribute(name=auto-start,value=false)
+/host=master/server-config=server-three:write-attribute(name=auto-start,value=false)
+
+/host=master/server-config=SOAP-Server-1:add(auto-start=true,group=server-group-SOAP)
+/host=master/server-config=SOAP-Server-2:add(auto-start=true,group=server-group-SOAP,socket-binding-port-offset=100)
