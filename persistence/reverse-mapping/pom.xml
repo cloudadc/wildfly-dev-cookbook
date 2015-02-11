@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <groupId>org.wildfly.wildfly-tutorial</groupId>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>reverse-mapping</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0</version>
+    <name>JPA Reverse Mapping</name>
+
+    <dependencies>
+    <dependency>
+        <groupId>javax.validation</groupId>
+        <artifactId>validation-api</artifactId>
+        <version>1.0.CR3</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.openjpa</groupId>
+        <artifactId>openjpa-all</artifactId>
+        <version>2.0.1</version>
+    </dependency>
+	<dependency>
+        	<groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.30</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+            	<groupId>org.codehaus.mojo</groupId>
+		<artifactId>exec-maven-plugin</artifactId>
+		<version>1.2</version>
+		<configuration>
+		    <mainClass>org.apache.openjpa.jdbc.meta.ReverseMappingTool</mainClass>
+		    <commandlineArgs>
+   			 -directory src/main/java -accessType fields
+		         -useGenericCollections true -package org.wildfly.wildfly-tutorial.jpa
+    			 -metadata none -annotations true
+    			 -innerIdentityClasses false -useBuiltinIdentityClass false
+    			 -primaryKeyOnJoin false
+    		    </commandlineArgs>
+		    <includePluginDependencies>true</includePluginDependencies>
+		</configuration>    
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
