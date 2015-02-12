@@ -56,4 +56,24 @@ JPA Entity 与 数据库 Table 映射关系:
 * **@Column:** specifies, at either the field, or the bean getter, level, which column in the database the field maps to.
 * **@Id:** specifies the field which is the unique ID for the entry in the database.
 
-## 映射生成 JPA Entities
+## 實驗一: 映射生成 JPA Entities
+
+[使用 OpenJPA ReverseMappingTool 映射生成 JPA Entities](reverse-mapping-openjpa/README.md)
+
+## Bean Validation
+
+* Bean Validation allows a Java EE application to ensure proper data is entered into a Bean
+* Hibernate Validator commonly applied validation to the JPA entity Bean
+* JSF2 based web UI can access the Bean Validation on a JPA entity
+* Validation by Annotation
+
+> WildFly implements Bean Validation 1.1, more details refer to [JSR 349: Bean Validation 1.1](https://jcp.org/en/jsr/detail?id=349)
+
+## 實驗二: Bean Validation
+
+[Java EE 應用中使用Bean Validation](bean-validation/README.md)
+
+## 實驗三: WildFly Travel 連接數據庫
+
+
+
