@@ -3,21 +3,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.wildfly.wildfly-tutorial</groupId>
-    <artifactId>wildfly-bean-validation</artifactId>
-    <version>9.0.0-SNAPSHOT</version>
+    <groupId>com.wftravel</groupId>
+    <artifactId>wftravel</artifactId>
+    <version>1.0.0</version>
     <packaging>war</packaging>
 
-    <name>WildFly Tutorial: Bean Validation</name>
-    <description>An Bean Validation test example</description>
+    <name>WildFly Travel Example</name>
+    <description>WildFly Travel Example</description>
    
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <!-- Timestamp format for the maven.build.timestamp property -->
-        <!-- You can reference property in pom.xml or filtered resources (must
-            enable third-party plugin if using Maven < 2.1) -->
         <maven.build.timestamp.format>yyyyMMdd'T'HHmmss</maven.build.timestamp.format>
 
         <!-- JBoss dependency versions -->

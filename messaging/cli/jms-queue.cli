@@ -1,0 +1,4 @@
+
+jms-queue add --queue-address=testQueue --entries=queue/test,java:jboss/exported/jms/queue/test
+
+jms-queue count-messages --queue-address=testQueue

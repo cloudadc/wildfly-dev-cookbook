@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_0.xsd" version="2.0">
+    <package>
+        org.wildfly.tutorial.persistence.entity
+    </package>
+    <access>
+        PROPERTY
+    </access>
+    <entity class="Role">
+        <table name="ROLE"/>
+        <attributes>
+            <id name="roleid">
+                <column name="ROLEID" column-definition="INT"/>
+            </id>
+            <basic name="rolename">
+                <column name="ROLENAME" nullable="false" length="25"/>
+            </basic>
+            <many-to-one name="user" fetch="LAZY">
+                <join-column name="USERID" column-definition="INT" nullable="false"/>
+                <cascade>
+                    <cascade-merge/>
+                </cascade>
+            </many-to-one>
+        </attributes>
+    </entity>
+    <entity class="User">
+        <table name="USER"/>
+        <attributes>
+            <id name="userid">
+                <column name="USERID" column-definition="INT"/>
+            </id>
+            <basic name="address1">
+                <column name="ADDRESS1" nullable="false" length="35"/>
+            </basic>
+            <basic name="address2">
+                <column name="ADDRESS2" length="35"/>
+            </basic>
+            <basic name="age">
+                <column name="AGE" column-definition="INT"/>
+            </basic>
+            <basic name="alanResortsId">
+                <column name="ALAN_RESORTS_ID" length="10"/>
+            </basic>
+            <basic name="city">
+                <column name="CITY" nullable="false" length="25"/>
+            </basic>
+            <basic name="country">
+                <column name="COUNTRY" nullable="false" length="3"/>
+            </basic>
+            <basic name="dHotelsId">
+                <column name="D_HOTELS_ID" length="10"/>
+            </basic>
+            <basic name="emailaddress">
+                <column name="EMAILADDRESS" nullable="false" length="50"/>
+            </basic>
+            <basic name="firstname">
+                <column name="FIRSTNAME" nullable="false" length="35"/>
+            </basic>
+            <basic name="frequentflyernumber">
+                <column name="FREQUENTFLYERNUMBER" column-definition="INT"/>
+            </basic>
+            <basic name="lastname">
+                <column name="LASTNAME" nullable="false" length="35"/>
+            </basic>
+            <basic name="loyaltylevel">
+                <column name="LOYALTYLEVEL" length="10"/>
+            </basic>
+            <basic name="middlename">
+                <column name="MIDDLENAME" length="35"/>
+            </basic>
+            <basic name="password">
+                <column name="PASSWORD" nullable="false" length="250"/>
+            </basic>
+            <basic name="phonenumber">
+                <column name="PHONENUMBER" column-definition="INT"/>
+            </basic>
+            <basic name="stateProv">
+                <column name="STATE_PROV" nullable="false" length="2"/>
+            </basic>
+            <basic name="username">
+                <column name="USERNAME" nullable="false" length="35"/>
+            </basic>
+            <basic name="zipPost">
+                <column name="ZIP_POST" nullable="false" length="10"/>
+            </basic>
+            <one-to-many name="roles" target-entity="org.wildfly.tutorial.persistence.entity.Role" mapped-by="user">
+                <cascade>
+                    <cascade-merge/>
+                </cascade>
+            </one-to-many>
+        </attributes>
+    </entity>
+</entity-mappings>

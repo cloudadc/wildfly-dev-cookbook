@@ -1,0 +1,3 @@
+
+jms-topic add --topic-address=testTopic --entries=topic/test,java:jboss/exported/jms/topic/test
+

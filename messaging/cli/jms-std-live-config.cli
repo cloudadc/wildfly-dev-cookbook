@@ -1,0 +1,13 @@
+/subsystem=messaging/hornetq-server=default:write-attribute(name=clustered,value=true)
+/subsystem=messaging/hornetq-server=default:write-attribute(name=persistence-enabled,value=true)
+/subsystem=messaging/hornetq-server=default:write-attribute(name=cluster-user,value=jms-cluster-user)
+/subsystem=messaging/hornetq-server=default:write-attribute(name=cluster-password,value=jms-cluster-password)
+/subsystem=messaging/hornetq-server=default:write-attribute(name=backup,value=false)
+/subsystem=messaging/hornetq-server=default:write-attribute(name=failover-on-shutdown,value=true)
+/subsystem=messaging/hornetq-server=default:write-attribute(name=check-for-live-server,value=true)
+/subsystem=messaging/hornetq-server=default:write-attribute(name=shared-store,value=true)
+/subsystem=messaging/hornetq-server=default:write-attribute(name=journal-file-size,value=102400)
+
+
+
+jms-queue add --queue-address=testQueue --entries=queue/test,java:jboss/exported/jms/queue/test

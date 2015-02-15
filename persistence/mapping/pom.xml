@@ -1,0 +1,73 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <groupId>org.wildfly.wildfly-tutorial</groupId>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>jpa-mapping</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0</version>
+    <name>JPA Mapping</name>
+    
+    <properties>
+    	<version.compiler.plugin>3.1</version.compiler.plugin>
+        <version.jar.plugin>2.2</version.jar.plugin>
+        <version.exec.plugin>1.1.1</version.exec.plugin>
+        
+        <hibernate.version>4.3.8.Final</hibernate.version>
+
+        <!-- maven-compiler-plugin -->
+        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.source>1.7</maven.compiler.source>
+    	
+    </properties>
+
+    <dependencies>
+    <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+	<dependency>
+        	<groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.30</version>
+        </dependency>
+    </dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>${version.exec.plugin}</version>
+				<configuration>
+				    <mainClass>org.wildfly.tutorial.persistence.mapping.SchemaGenerator</mainClass>
+				    <commandlineArgs>com.wftravel.model _generate</commandlineArgs>
+				    <includePluginDependencies>true</includePluginDependencies>
+				</configuration>   
+				<dependencies>
+				    <dependency>
+			            <groupId>org.hibernate</groupId>
+			            <artifactId>hibernate-entitymanager</artifactId>
+			            <version>${hibernate.version}</version>
+					</dependency>
+			        <dependency>
+			            <groupId>mysql</groupId>
+			            <artifactId>mysql-connector-java</artifactId>
+			            <version>5.1.30</version>
+			        </dependency>
+			    </dependencies>
+ 
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${version.compiler.plugin}</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+            
+        </plugins>
+    </build>
+
+</project>

@@ -1,3 +1,3 @@
 /subsystem=security/security-domain=WFTravel:add(cache-type=default)
 
-/subsystem=security/security-domain=WFTravel/authentication=classic:add(login-modules=[{"code"=>"Database", "flag"=>"required", "module-options"=>[("dsJndiName"=>"java:jboss/datasources/WFTravelDS"),("principalsQuery"=>"SELECT PASSWORD FROM USER WHERE USERNAME=?"), ("rolesQuery"=>"SELECT ROLENAME, 'Roles' FROM ROLE r, USER u WHERE u.USERID=r.USERID AND u.USERNAME=?")]}])
+/subsystem=security/security-domain=WFTravel/authentication=classic:add(login-modules=[{"code"=>"Database", "flag"=>"required", "module-options"=>[("dsJndiName"=>"java:jboss/datasources/WFTravelDS"),("principalsQuery"=>"SELECT password FROM user WHERE username=?"), ("rolesQuery"=>"SELECT rolename, 'Roles' FROM role r, user u WHERE u.userid=r.userid AND u.username=?")]}])
