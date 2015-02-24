@@ -75,5 +75,4 @@ JPA Entity 与 数据库 Table 映射关系:
 
 ## 實驗三: WildFly Travel 連接數據庫
 
-
-
+[Model Classes](travel/src/main/java/com/wftravel/model/)
