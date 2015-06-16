@@ -12,6 +12,7 @@ public class StatefulSessionBeanClient {
 	private String applicationContext = "cluster-demo-sfsb";
 	private String SFSB_JNDI = "ejb:/" + applicationContext + "/StatefulSessionBean!" + StatefulSession.class.getName()  + "?stateful";		
 	
+	@SuppressWarnings("static-access")
 	private void execute() throws Exception {
 		Hashtable<String, String> jndiProps = new Hashtable<String, String>();
 		jndiProps.put( Context.URL_PKG_PREFIXES, "org.jboss.ejb.client.naming" );
